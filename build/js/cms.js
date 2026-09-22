@@ -15,13 +15,15 @@
 
   const IMAGE_FRAGMENT = `{
     alt,
-    "url": asset->url
+    "url": asset->url,
+    "filename": asset->originalFilename
   }`;
 
   const GALLERY_FRAGMENT = `{
     alt,
     caption,
-    "url": image.asset->url
+    "url": image.asset->url,
+    "filename": image.asset->originalFilename
   }`;
 
   const SETTINGS_FRAGMENT = `{
@@ -222,11 +224,20 @@
     document.title = value;
   }
 
+  /**
+   * Sanity CDN filenames are content hashes, so the enquiry form reads the
+   * original upload name from this attribute instead of the src.
+   */
+  function imageRef(filename) {
+    return String(filename).replace(/\.[^.]+$/, "");
+  }
+
   function setImage(selector, image, width) {
     const el = document.querySelector(selector);
     if (!el || !image || !image.url) return;
     el.src = imageUrl(image.url, width);
     if (hasText(image.alt)) el.alt = image.alt;
+    if (hasText(image.filename)) el.dataset.imageRef = imageRef(image.filename);
   }
 
   function spanToHtml(span, markDefs) {
@@ -534,10 +545,12 @@
     const gallery = document.querySelector(".location-gallery");
     if (!gallery) return;
     gallery.innerHTML = items
-      .map(
-        (item) =>
-          `<img src="${imageUrl(item.url, 1400)}" alt="${escapeHtml(item.alt || "")}">`
-      )
+      .map((item) => {
+        const ref = hasText(item.filename)
+          ? ` data-image-ref="${escapeHtml(imageRef(item.filename))}"`
+          : "";
+        return `<img src="${imageUrl(item.url, 1400)}" alt="${escapeHtml(item.alt || "")}"${ref}>`;
+      })
       .join("");
   }
 
