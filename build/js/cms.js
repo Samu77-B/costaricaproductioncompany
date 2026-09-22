@@ -173,8 +173,10 @@
   }
 
   function fetchContent(groq) {
+    // api, not apicdn: the CDN held stale responses for many minutes after a
+    // publish, so editors could not see their own changes.
     const url =
-      `https://${projectId}.apicdn.sanity.io/v${apiVersion}/data/query/${dataset}` +
+      `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}` +
       `?query=${encodeURIComponent(groq)}`;
 
     return fetch(url).then((response) => {
@@ -311,6 +313,8 @@
       }
     }
 
+    // Unlike the galleries, a slideshow with no slides leaves a blank hero, so
+    // an empty list keeps whatever the page already shows.
     const slides = (doc.heroSlides || []).filter((slide) => slide && slide.url);
     if (!slides.length) return;
 
@@ -415,8 +419,10 @@
     setText(".page-section__headline", doc.introHeadline);
     setText(".page-section__inner > .page-section__text", doc.intro);
 
-    const items = (doc.gallery || []).filter((item) => item && item.url);
-    if (!items.length) return;
+    // A missing field means the CMS has nothing to say; an empty array is a
+    // deliberate "no images" and must clear the grid.
+    if (!Array.isArray(doc.gallery)) return;
+    const items = doc.gallery.filter((item) => item && item.url);
     const grid = document.querySelector(".work-grid");
     if (!grid) return;
     grid.innerHTML = items
@@ -523,8 +529,8 @@
       if (lightboxIntro) lightboxIntro.textContent = doc.enquiryIntro;
     }
 
-    const items = (doc.gallery || []).filter((item) => item && item.url);
-    if (!items.length) return;
+    if (!Array.isArray(doc.gallery)) return;
+    const items = doc.gallery.filter((item) => item && item.url);
     const gallery = document.querySelector(".location-gallery");
     if (!gallery) return;
     gallery.innerHTML = items
