@@ -17,7 +17,7 @@ Until a Sanity project ID is added, the site keeps showing the current hard-code
 | Location detail pages | Title, intro, hero, side image, gallery |
 | Site settings | Footer tagline, emails, phone, Instagram |
 
-Galleries and slideshows are replaced as a whole. To change one image in a gallery, keep the other images in Studio too (upload the current set the first time you edit that gallery).
+Every image the site shows is already stored in Sanity, so the client can replace or delete one picture at a time without the rest disappearing. Studio is now the source of truth: if a gallery is emptied there, the page shows an empty gallery rather than falling back to the old pictures.
 
 ## One-time setup
 
@@ -74,9 +74,12 @@ npm install --prefix studio
 Create an **Editor** token: Manage → API → Tokens. Put it in root `.env` as `SANITY_WRITE_TOKEN` (never commit this).
 
 ```bash
-npm run content:seed
+npm run content:seed          # text from the HTML
+npm run content:import-images # images from build/ into Sanity
 npm run studio
 ```
+
+`content:import-images` only fills fields that are still empty, so it will never overwrite something the client has uploaded. Add `--dry` to preview, `--force` to overwrite anyway. `npm run content:inspect` prints which images each page currently has.
 
 Open `http://localhost:3333`, log in, upload images, click **Publish**.
 
@@ -96,7 +99,7 @@ Invite the client: **Project → Members → Editor**. Ask them to turn on **2FA
 
 Commit the `cms-config.js` project ID and the HTML/`js` changes, then push so Hostinger Git deploy goes live.
 
-After that, the client only uses Studio. **Publish** updates the site within a few seconds (Sanity CDN cache is short).
+After that, the client only uses Studio. **Publish** updates the site on the next page load — the site reads `api.sanity.io` rather than the cached `apicdn`, because the CDN was serving stale content for many minutes after a publish.
 
 ## Day-to-day for the client
 
