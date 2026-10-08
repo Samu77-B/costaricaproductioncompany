@@ -167,7 +167,7 @@ Hard-coded tags in each `index.html` are the fallback (and what share crawlers s
 1. Edit the HTML / CSS / JS under `build/`.
 2. If you changed a shared JS/CSS file, bump `?v=`.
 3. Preview locally (`npx serve build`) — Sanity may not load on a random localhost port (CORS). That is normal; the hard-coded HTML is the fallback.
-4. Check live after push: `https://www.granadaproductionhouse.com` (that origin *is* in Sanity CORS).
+4. Check live after push: `https://www.costaricaproductioncompany.com` (add that origin in Sanity CORS once the new project is created).
 5. For forms: submit a test, check the Formspree inbox.
 6. Commit + push — Hostinger Git deploy does the rest.
 

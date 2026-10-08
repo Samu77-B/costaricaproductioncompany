@@ -13,11 +13,11 @@ IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
 
 # prefix used in filenames for each location page folder
 PAGES = {
-    "alpine-and-vistas": "Alpine-and-Vistas",
-    "mediterranean-coastlines": "mediterranean-coastlines",
-    "moorish-architecture": "Moorish-Architecture",
-    "historic-and-traditional": "Historic-and-Traditional",
-    "granada-city-center": "Granada-City-Center",
+    "consectetur-rainforest": "Alpine-and-Vistas",
+    "dolor-highlands": "mediterranean-coastlines",
+    "lorem-valley": "Moorish-Architecture",
+    "ipsum-coast": "Historic-and-Traditional",
+    "amet-city": "Granada-City-Center",
 }
 
 
@@ -98,11 +98,11 @@ def update_locations_index(hero_by_page: dict[str, str]) -> None:
 
     # card thumbnails: first image for each page becomes Prefix-01
     replacements = {
-        "moorish-architecture/": hero_by_page.get("moorish-architecture"),
-        "historic-and-traditional/": hero_by_page.get("historic-and-traditional"),
-        "mediterranean-coastlines/": hero_by_page.get("mediterranean-coastlines"),
-        "granada-city-center/": hero_by_page.get("granada-city-center"),
-        "alpine-and-vistas/": hero_by_page.get("alpine-and-vistas"),
+        "lorem-valley/": hero_by_page.get("lorem-valley"),
+        "ipsum-coast/": hero_by_page.get("ipsum-coast"),
+        "dolor-highlands/": hero_by_page.get("dolor-highlands"),
+        "amet-city/": hero_by_page.get("amet-city"),
+        "consectetur-rainforest/": hero_by_page.get("consectetur-rainforest"),
     }
 
     # Replace card image srcs by matching href context blocks

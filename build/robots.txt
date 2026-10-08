@@ -6,4 +6,4 @@ Disallow: /docs/
 Disallow: /scripts/
 Disallow: /node_modules/
 
-Sitemap: https://www.granadaproductionhouse.com/sitemap.xml
+Sitemap: https://www.costaricaproductioncompany.com/sitemap.xml

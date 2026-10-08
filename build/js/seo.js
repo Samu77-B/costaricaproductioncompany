@@ -1,5 +1,5 @@
 (function () {
-  const ORIGIN = "https://www.granadaproductionhouse.com";
+  const ORIGIN = "https://www.costaricaproductioncompany.com";
   const DEFAULT_IMAGE =
     ORIGIN + "/assets/HomePage/home%20page%20main%20hero%20image.png";
 
@@ -47,7 +47,7 @@
 
     ensureCanonical(url);
     ensureMeta("property", "og:type", "website");
-    ensureMeta("property", "og:site_name", "Granada Production House");
+    ensureMeta("property", "og:site_name", "Costa Rica Production Company");
     ensureMeta("property", "og:locale", "en_GB");
     ensureMeta("property", "og:title", title);
     ensureMeta("property", "og:description", desc);
@@ -68,19 +68,17 @@
     const data = {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      name: "Granada Production House",
+      name: "Costa Rica Production Company",
       url: ORIGIN + "/",
       image: DEFAULT_IMAGE,
       description: desc,
-      email: "enquiries@granadaproductionhouse.com",
-      telephone: "+347222237929",
+      email: "enquiries@costaricaproductioncompany.com",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Granada",
-        addressCountry: "ES",
+        addressCountry: "CR",
       },
-      areaServed: ["Granada", "Andalucía", "Spain"],
-      sameAs: ["https://www.instagram.com/granadaproductionhouse"],
+      areaServed: ["Costa Rica"],
+      sameAs: ["https://www.instagram.com/costaricaproductioncompany"],
     };
 
     const script = document.createElement("script");

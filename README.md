@@ -1,4 +1,4 @@
-# Granada Production House — website
+# Costa Rica Production Company — website
 
 Static site output lives in [`build/`](build/). Hostinger Git deploys the repo root; `.htaccess` serves `build/` at `/` and redirects `/build/` URLs.
 
@@ -19,4 +19,4 @@ npm run content:seed
 npm run studio
 ```
 
-Host Studio for the client: `npm run studio:deploy` → `https://granadaproductionhouse.sanity.studio`
+Host Studio for the client: `npm run studio:deploy` → `https://costaricaproductioncompany.sanity.studio`

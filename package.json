@@ -1,7 +1,7 @@
 {
-  "name": "granadaproductionhouse",
+  "name": "costaricaproductioncompany",
   "private": true,
-  "description": "Granada Production House website — static build + Sanity CMS",
+  "description": "Costa Rica Production Company website — static build + Sanity CMS",
   "type": "module",
   "scripts": {
     "studio": "npm run dev --prefix studio",

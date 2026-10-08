@@ -20,11 +20,11 @@
   ];
 
   const locationLinks = [
-    { href: "location/moorish-architecture/", label: "Moorish Architecture" },
-    { href: "location/historic-and-traditional/", label: "Historic and Traditional" },
-    { href: "location/mediterranean-coastlines/", label: "Mediterranean Coastlines" },
-    { href: "location/granada-city-center/", label: "Granada City Center & Modern Architecture" },
-    { href: "location/alpine-and-vistas/", label: "Alpine and Vistas" },
+    { href: "location/lorem-valley/", label: "Lorem Valley" },
+    { href: "location/ipsum-coast/", label: "Ipsum Coast" },
+    { href: "location/dolor-highlands/", label: "Dolor Highlands" },
+    { href: "location/amet-city/", label: "Amet City" },
+    { href: "location/consectetur-rainforest/", label: "Consectetur Rainforest" },
   ];
 
   function resolve(path) {
@@ -38,16 +38,16 @@
 
     mount.outerHTML = `
       <header class="site-header">
-        <a href="${resolve("index.html")}" class="site-header__brand" aria-label="Granada Production House home">
+        <a href="${resolve("index.html")}" class="site-header__brand" aria-label="Costa Rica Production Company home">
           <img
             class="site-header__logo site-header__logo--desktop"
             src="${base}assets/GPH-Logo-Wht.png"
-            alt="Granada Production House"
+            alt="Costa Rica Production Company"
           >
           <img
             class="site-header__logo site-header__logo--mobile"
             src="${base}assets/GPH-Logo-Wht - Mbl.png"
-            alt="Granada Production House"
+            alt="Costa Rica Production Company"
           >
         </a>
 
@@ -80,8 +80,8 @@
       <footer class="site-footer" id="contact">
         <div class="site-footer__grid">
           <div class="site-footer__brand">
-            <img src="${base}assets/GPH-Logo-Wht.png" alt="Granada Production House">
-            <p data-cms-footer="tagline">Boutique photoshoot production company based in Granada, Spain.</p>
+            <img src="${base}assets/GPH-Logo-Wht.png" alt="Costa Rica Production Company">
+            <p data-cms-footer="tagline">Boutique photoshoot production company based in Costa Rica.</p>
           </div>
 
           <div class="site-footer__col">
@@ -96,9 +96,9 @@
 
           <div class="site-footer__col">
             <h2 class="site-footer__heading">Contact</h2>
-            <p>Granada, Spain</p>
-            <p><a data-cms-footer="email" href="mailto:hola@granadaproductionhouse.com">hola@granadaproductionhouse.com</a></p>
-            <p><a data-cms-footer="instagram" href="https://www.instagram.com/granadaproductionhouse" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+            <p>Costa Rica</p>
+            <p><a data-cms-footer="email" href="mailto:hola@costaricaproductioncompany.com">hola@costaricaproductioncompany.com</a></p>
+            <p><a data-cms-footer="instagram" href="https://www.instagram.com/costaricaproductioncompany" target="_blank" rel="noopener noreferrer">Instagram</a></p>
             <p class="site-footer__locations">
               ${locationLinks
                 .map((link) => `<a href="${resolve(link.href)}">${link.label}</a>`)
@@ -108,7 +108,7 @@
         </div>
 
         <div class="site-footer__bottom">
-          <p>&copy; 2026 Granada Production House. All rights reserved.</p>
+          <p>&copy; 2026 Costa Rica Production Company. All rights reserved.</p>
           <p class="site-footer__credit">
             Website designed, built and maintained by
             <a href="https://paradigmstudio.net/" target="_blank" rel="noopener noreferrer">Paradigm Studio</a>

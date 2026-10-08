@@ -1,4 +1,4 @@
-# Sanity CMS — Granada Production House
+# Sanity CMS — Costa Rica Production Company
 
 The public site stays **static HTML** on Hostinger. Editors change text and images in **Sanity Studio** (a separate website). After they click **Publish**, the live pages fetch the new content. No FTP for the client.
 
@@ -59,8 +59,8 @@ Then bump the `cms-config.js?v=` number in the HTML pages so browsers load the n
 
 In [sanity.io/manage](https://www.sanity.io/manage) → the project → **API** → **CORS origins**, add:
 
-- `https://www.granadaproductionhouse.com`
-- `https://granadaproductionhouse.com`
+- `https://www.costaricaproductioncompany.com`
+- `https://costaricaproductioncompany.com`
 
 Leave **Allow credentials** off. Dataset `production` should stay **public** (read-only for the website).
 
@@ -89,9 +89,9 @@ Open `http://localhost:3333`, log in, upload images, click **Publish**.
 npm run studio:deploy
 ```
 
-Hostname is already set to `granadaproductionhouse`, so the editor URL is:
+Hostname is set to `costaricaproductioncompany` (update after the new Sanity project is created). The editor URL will be:
 
-`https://granadaproductionhouse.sanity.studio`
+`https://costaricaproductioncompany.sanity.studio`
 
 Invite the client: **Project → Members → Editor**. Ask them to turn on **2FA**.
 
@@ -103,11 +103,11 @@ After that, the client only uses Studio. **Publish** updates the site on the nex
 
 ## Day-to-day for the client
 
-1. Go to `https://granadaproductionhouse.sanity.studio`
+1. Go to `https://costaricaproductioncompany.sanity.studio`
 2. Open the page they want to change
 3. Edit text or click the image to replace it
 4. Click **Publish**
-5. Refresh granadaproductionhouse.com (hard refresh if the old image is cached)
+5. Refresh costaricaproductioncompany.com (hard refresh if the old image is cached)
 
 They never need FTP, Git, or Hostinger.
 

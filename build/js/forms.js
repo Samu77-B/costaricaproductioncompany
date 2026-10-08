@@ -2,11 +2,11 @@
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvkzkdav";
 
   const LOCATION_LABELS = {
-    "moorish-architecture": "Moorish Architecture",
-    "historic-and-traditional": "Historic and Traditional",
-    "mediterranean-coastlines": "Mediterranean Coastlines",
-    "granada-city-center": "Granada City Center & Modern Architecture",
-    "alpine-and-vistas": "Alpine and Vistas",
+    "lorem-valley": "Lorem Valley",
+    "ipsum-coast": "Ipsum Coast",
+    "dolor-highlands": "Dolor Highlands",
+    "amet-city": "Amet City",
+    "consectetur-rainforest": "Consectetur Rainforest",
   };
 
   function escapeHtml(value) {
@@ -18,7 +18,7 @@
   }
 
   function subjectFor(locationLabel, imageRef) {
-    if (!locationLabel) return "Website enquiry — Granada Production House";
+    if (!locationLabel) return "Website enquiry — Costa Rica Production Company";
     const place = imageRef ? " / " + imageRef : "";
     return "Location enquiry — " + locationLabel + place;
   }
@@ -117,12 +117,12 @@
               (data) => {
                 const msg =
                   (data && data.error) ||
-                  "Something went wrong. Please email enquiries@granadaproductionhouse.com.";
+                  "Something went wrong. Please email enquiries@costaricaproductioncompany.com.";
                 throw new Error(msg);
               },
               () => {
                 throw new Error(
-                  "Something went wrong. Please email enquiries@granadaproductionhouse.com."
+                  "Something went wrong. Please email enquiries@costaricaproductioncompany.com."
                 );
               }
             );
@@ -141,7 +141,7 @@
             form,
             "err",
             err.message ||
-              "Something went wrong. Please email enquiries@granadaproductionhouse.com."
+              "Something went wrong. Please email enquiries@costaricaproductioncompany.com."
           );
         })
         .finally(() => {

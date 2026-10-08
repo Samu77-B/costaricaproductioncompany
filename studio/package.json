@@ -1,5 +1,5 @@
 {
-  "name": "gph-sanity-studio",
+  "name": "crpc-sanity-studio",
   "private": true,
   "version": "1.0.0",
   "scripts": {
@@ -13,7 +13,7 @@
   ],
   "dependencies": {
     "@sanity/vision": "^3.72.0",
-    "granadaproductionhouse": "file:..",
+    "costaricaproductioncompany": "file:..",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sanity": "^3.72.0",

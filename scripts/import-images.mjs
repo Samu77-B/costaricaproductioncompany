@@ -59,16 +59,16 @@ const plan = [
     id: "homePage",
     label: "Home page",
     single: {
-      aboutImage: img("assets/HomePage/GPH-Tree.png", "Granada landscape illustration"),
+      aboutImage: img("assets/HomePage/GPH-Tree.png", "Costa Rica landscape illustration"),
     },
     arrays: {
       heroSlides: {
         field: "image",
         items: [
-          gal("assets/HomePage/home page main hero image.png", "Fashion shoot in Granada"),
-          gal("assets/HomePage/Homepage loop1.png", "Editorial production in Granada"),
+          gal("assets/HomePage/home page main hero image.png", "Fashion shoot in Costa Rica"),
+          gal("assets/HomePage/Homepage loop1.png", "Editorial production in Costa Rica"),
           gal("assets/HomePage/homepage loop image 2.png", "Beach fashion production"),
-          gal("assets/HomePage/homepage loop image 3.png", "Commercial shoot in Granada"),
+          gal("assets/HomePage/homepage loop image 3.png", "Commercial shoot in Costa Rica"),
           gal("assets/HomePage/homepage  Loop image 4.png", "Swimwear campaign on the coast"),
         ],
       },
@@ -80,7 +80,7 @@ const plan = [
     single: {
       heroImage: img(
         "team/meet-the-team-hero.png",
-        "Granada Production House team collaborating in the studio"
+        "Costa Rica Production Company team collaborating in the studio"
       ),
     },
   },
@@ -99,85 +99,85 @@ const plan = [
     id: "locationsIndexPage",
     label: "Locations index",
     single: {
-      heroImage: img("location/Locations-01.png", "Granada landscape for location shoots"),
+      heroImage: img("location/Locations-01.png", "Costa Rica landscape for location shoots"),
     },
   },
   {
-    id: "location-moorish-architecture",
-    label: "Location — Moorish Architecture",
+    id: "location-lorem-valley",
+    label: "Location — Lorem Valley",
     single: {
       heroImage: img(
-        "location/moorish-architecture/Moorish-Architecture-01.jpeg",
-        "Moorish architecture in Granada"
+        "location/lorem-valley/Moorish-Architecture-01.jpeg",
+        "Lorem Valley placeholder"
       ),
       sideImage: img(
-        "location/moorish-architecture/Moorish-Architecture-02.jpg",
-        "Moorish architectural detail"
+        "location/lorem-valley/Moorish-Architecture-02.jpg",
+        "Lorem Valley placeholder"
       ),
     },
     arrays: {
       gallery: {
         field: "image",
         items: [
-          gal("location/moorish-architecture/Moorish-Architecture-03.jpg", "Alhambra exterior"),
-          gal("location/moorish-architecture/Moorish-Architecture-04.jpg", "Alhambra courtyard"),
-          gal("location/moorish-architecture/Moorish-Architecture-05.jpg", "Granada Moorish skyline"),
-          gal("location/moorish-architecture/Moorish-Architecture-06.jpg", "Historic Granada view"),
-          gal("location/moorish-architecture/Moorish-Architecture-07.jpg", "Spanish historic architecture"),
-          gal("location/moorish-architecture/Moorish-Architecture-08.jpeg", "Moorish location detail"),
-          gal("location/moorish-architecture/Moorish-Architecture-09.jpeg", "Moorish location detail"),
-          gal("location/moorish-architecture/Moorish-Architecture-10.jpeg", "Carrera del Darro"),
-          gal("location/moorish-architecture/Moorish-Architecture-11.jpeg", "Carmen de los Martires"),
-          gal("location/moorish-architecture/Moorish-Architecture-12.jpeg", "Historic Granada location"),
-          gal("location/moorish-architecture/Moorish-Architecture-13.png", "Moorish souk alleyway"),
+          gal("location/lorem-valley/Moorish-Architecture-03.jpg", "Lorem Valley placeholder 1"),
+          gal("location/lorem-valley/Moorish-Architecture-04.jpg", "Lorem Valley placeholder 2"),
+          gal("location/lorem-valley/Moorish-Architecture-05.jpg", "Lorem Valley placeholder 3"),
+          gal("location/lorem-valley/Moorish-Architecture-06.jpg", "Lorem Valley placeholder 4"),
+          gal("location/lorem-valley/Moorish-Architecture-07.jpg", "Lorem Valley placeholder 5"),
+          gal("location/lorem-valley/Moorish-Architecture-08.jpeg", "Lorem Valley placeholder"),
+          gal("location/lorem-valley/Moorish-Architecture-09.jpeg", "Lorem Valley placeholder"),
+          gal("location/lorem-valley/Moorish-Architecture-10.jpeg", "Ipsum Coast placeholder"),
+          gal("location/lorem-valley/Moorish-Architecture-11.jpeg", "Placeholder location"),
+          gal("location/lorem-valley/Moorish-Architecture-12.jpeg", "Lorem Valley placeholder 10"),
+          gal("location/lorem-valley/Moorish-Architecture-13.png", "Lorem Valley placeholder 11"),
         ],
       },
     },
   },
   {
-    id: "location-historic-and-traditional",
-    label: "Location — Historic and Traditional",
+    id: "location-ipsum-coast",
+    label: "Location — Ipsum Coast",
     single: {
       heroImage: img(
-        "location/historic-and-traditional/Historic-and-Traditional-01.jpeg",
-        "Historic and traditional locations in Granada"
+        "location/ipsum-coast/Historic-and-Traditional-01.jpeg",
+        "Ipsum Coast placeholder"
       ),
       sideImage: img(
-        "location/historic-and-traditional/Historic-and-Traditional-02.jpeg",
-        "Carrera del Darro"
+        "location/ipsum-coast/Historic-and-Traditional-02.jpeg",
+        "Ipsum Coast placeholder"
       ),
     },
     arrays: {
       gallery: {
         field: "image",
         items: [
-          gal("location/historic-and-traditional/Historic-and-Traditional-02.jpeg", "Carrera del Darro"),
-          gal("location/historic-and-traditional/Historic-and-Traditional-03.jpeg", "Carrera del Darro street"),
-          gal("location/historic-and-traditional/Historic-and-Traditional-04.jpeg", "Carrera del Darro view"),
-          gal("location/historic-and-traditional/Historic-and-Traditional-05.jpeg", "Historic Granada street"),
-          gal("location/historic-and-traditional/Historic-and-Traditional-06.jpeg", "Carrera del Darro riverside"),
-          gal("location/historic-and-traditional/Historic-and-Traditional-07.jpeg", "Carmen de los Martires"),
-          gal("location/historic-and-traditional/Historic-and-Traditional-08.jpeg", "Historic Granada gardens"),
-          gal("location/historic-and-traditional/Historic-and-Traditional-09.jpeg", "Traditional Granada location"),
-          gal("location/historic-and-traditional/Historic-and-Traditional-10.jpeg", "Historic courtyard"),
-          gal("location/historic-and-traditional/Historic-and-Traditional-11.jpeg", "Historic Granada detail"),
-          gal("location/historic-and-traditional/Historic-and-Traditional-12.jpeg", "Granada vista"),
-          gal("location/historic-and-traditional/Historic-and-Traditional-13.jpeg", "San Miguel Alto vista"),
-          gal("location/historic-and-traditional/Historic-and-Traditional-14.jpeg", "Sacromonte caves"),
+          gal("location/ipsum-coast/Historic-and-Traditional-02.jpeg", "Ipsum Coast placeholder"),
+          gal("location/ipsum-coast/Historic-and-Traditional-03.jpeg", "Ipsum Coast placeholder 2"),
+          gal("location/ipsum-coast/Historic-and-Traditional-04.jpeg", "Ipsum Coast placeholder 3"),
+          gal("location/ipsum-coast/Historic-and-Traditional-05.jpeg", "Ipsum Coast placeholder 4"),
+          gal("location/ipsum-coast/Historic-and-Traditional-06.jpeg", "Ipsum Coast placeholder 5"),
+          gal("location/ipsum-coast/Historic-and-Traditional-07.jpeg", "Placeholder location"),
+          gal("location/ipsum-coast/Historic-and-Traditional-08.jpeg", "Ipsum Coast placeholder 7"),
+          gal("location/ipsum-coast/Historic-and-Traditional-09.jpeg", "Ipsum Coast placeholder 8"),
+          gal("location/ipsum-coast/Historic-and-Traditional-10.jpeg", "Historic courtyard"),
+          gal("location/ipsum-coast/Historic-and-Traditional-11.jpeg", "Ipsum Coast placeholder 10"),
+          gal("location/ipsum-coast/Historic-and-Traditional-12.jpeg", "Ipsum Coast placeholder 11"),
+          gal("location/ipsum-coast/Historic-and-Traditional-13.jpeg", "San Miguel Alto vista"),
+          gal("location/ipsum-coast/Historic-and-Traditional-14.jpeg", "Sacromonte caves"),
         ],
       },
     },
   },
   {
-    id: "location-mediterranean-coastlines",
-    label: "Location — Mediterranean Coastlines",
+    id: "location-dolor-highlands",
+    label: "Location — Dolor Highlands",
     single: {
       heroImage: img(
-        "location/mediterranean-coastlines/mediterranean-coastlines-01.png",
+        "location/dolor-highlands/mediterranean-coastlines-01.png",
         "Mediterranean coastline shoot location"
       ),
       sideImage: img(
-        "location/mediterranean-coastlines/mediterranean-coastlines-02.jpeg",
+        "location/dolor-highlands/mediterranean-coastlines-02.jpeg",
         "Costa Tropical coastline"
       ),
     },
@@ -185,32 +185,32 @@ const plan = [
       gallery: {
         field: "image",
         items: [
-          gal("location/mediterranean-coastlines/mediterranean-coastlines-03.jpg", "Costa Tropical shoreline"),
-          gal("location/mediterranean-coastlines/mediterranean-coastlines-04.jpg", "Mediterranean coast view"),
-          gal("location/mediterranean-coastlines/mediterranean-coastlines-02.jpeg", "Costa Tropical coastline"),
-          gal("location/mediterranean-coastlines/mediterranean-coastlines-05.jpeg", "Mediterranean coastal cliffs"),
-          gal("location/mediterranean-coastlines/mediterranean-coastlines-06.png", "Costa Tropical beach"),
-          gal("location/mediterranean-coastlines/mediterranean-coastlines-07.jpeg", "Mediterranean sea view"),
-          gal("location/mediterranean-coastlines/mediterranean-coastlines-08.jpeg", "Coastal landscape"),
-          gal("location/mediterranean-coastlines/mediterranean-coastlines-09.jpeg", "Mediterranean coastline"),
-          gal("location/mediterranean-coastlines/mediterranean-coastlines-10.jpeg", "Coastal vista"),
-          gal("location/mediterranean-coastlines/mediterranean-coastlines-11.jpeg", "Mediterranean shore"),
-          gal("location/mediterranean-coastlines/mediterranean-coastlines-12.png", "Coastal fashion location"),
-          gal("location/mediterranean-coastlines/mediterranean-coastlines-13.png", "Mediterranean location shoot"),
+          gal("location/dolor-highlands/mediterranean-coastlines-03.jpg", "Costa Tropical shoreline"),
+          gal("location/dolor-highlands/mediterranean-coastlines-04.jpg", "Mediterranean coast view"),
+          gal("location/dolor-highlands/mediterranean-coastlines-02.jpeg", "Costa Tropical coastline"),
+          gal("location/dolor-highlands/mediterranean-coastlines-05.jpeg", "Mediterranean coastal cliffs"),
+          gal("location/dolor-highlands/mediterranean-coastlines-06.png", "Costa Tropical beach"),
+          gal("location/dolor-highlands/mediterranean-coastlines-07.jpeg", "Mediterranean sea view"),
+          gal("location/dolor-highlands/mediterranean-coastlines-08.jpeg", "Coastal landscape"),
+          gal("location/dolor-highlands/mediterranean-coastlines-09.jpeg", "Mediterranean coastline"),
+          gal("location/dolor-highlands/mediterranean-coastlines-10.jpeg", "Coastal vista"),
+          gal("location/dolor-highlands/mediterranean-coastlines-11.jpeg", "Mediterranean shore"),
+          gal("location/dolor-highlands/mediterranean-coastlines-12.png", "Coastal fashion location"),
+          gal("location/dolor-highlands/mediterranean-coastlines-13.png", "Mediterranean location shoot"),
         ],
       },
     },
   },
   {
-    id: "location-granada-city-center",
-    label: "Location — Granada City Center",
+    id: "location-amet-city",
+    label: "Location — Amet City",
     single: {
       heroImage: img(
-        "location/granada-city-center/Granada-City-Center-01.jpeg",
-        "Granada city centre architecture"
+        "location/amet-city/Granada-City-Center-01.jpeg",
+        "Amet City placeholder"
       ),
       sideImage: img(
-        "location/granada-city-center/Granada-City-Center-02.jpg",
+        "location/amet-city/Granada-City-Center-02.jpg",
         "Urban architectural setting"
       ),
     },
@@ -218,33 +218,33 @@ const plan = [
       gallery: {
         field: "image",
         items: [
-          gal("location/granada-city-center/Granada-City-Center-02.jpg", "City location 1"),
-          gal("location/granada-city-center/Granada-City-Center-03.jpg", "City location 2"),
-          gal("location/granada-city-center/Granada-City-Center-04.jpeg", "City location 3"),
-          gal("location/granada-city-center/Granada-City-Center-05.jpeg", "City location 4"),
-          gal("location/granada-city-center/Granada-City-Center-06.jpeg", "City location 5"),
+          gal("location/amet-city/Granada-City-Center-02.jpg", "City location 1"),
+          gal("location/amet-city/Granada-City-Center-03.jpg", "City location 2"),
+          gal("location/amet-city/Granada-City-Center-04.jpeg", "City location 3"),
+          gal("location/amet-city/Granada-City-Center-05.jpeg", "City location 4"),
+          gal("location/amet-city/Granada-City-Center-06.jpeg", "City location 5"),
         ],
       },
     },
   },
   {
-    id: "location-alpine-and-vistas",
-    label: "Location — Alpine and Vistas",
+    id: "location-consectetur-rainforest",
+    label: "Location — Consectetur Rainforest",
     single: {
-      heroImage: img("location/alpine-and-vistas/Alpine-and-Vistas-01.jpg", "Alpine landscape near Granada"),
-      sideImage: img("location/alpine-and-vistas/Alpine-and-Vistas-02.jpg", "Alpine location"),
+      heroImage: img("location/consectetur-rainforest/Alpine-and-Vistas-01.jpg", "Consectetur Rainforest placeholder"),
+      sideImage: img("location/consectetur-rainforest/Alpine-and-Vistas-02.jpg", "Alpine location"),
     },
     arrays: {
       gallery: {
         field: "image",
         items: [
-          gal("location/alpine-and-vistas/Alpine-and-Vistas-02.jpg", "Alpine location 1"),
-          gal("location/alpine-and-vistas/Alpine-and-Vistas-03.jpg", "Alpine location 2"),
-          gal("location/alpine-and-vistas/Alpine-and-Vistas-04.jpeg", "San Miguel Alto view"),
-          gal("location/alpine-and-vistas/Alpine-and-Vistas-05.png", "Mirador San Miguel"),
-          gal("location/alpine-and-vistas/Alpine-and-Vistas-06.jpeg", "Mirador Placeta de Carvajales"),
-          gal("location/alpine-and-vistas/Alpine-and-Vistas-07.jpeg", "Mirador de San Nicolás"),
-          gal("location/alpine-and-vistas/Alpine-and-Vistas-08.jpeg", "Sacromonte hillside vista"),
+          gal("location/consectetur-rainforest/Alpine-and-Vistas-02.jpg", "Alpine location 1"),
+          gal("location/consectetur-rainforest/Alpine-and-Vistas-03.jpg", "Alpine location 2"),
+          gal("location/consectetur-rainforest/Alpine-and-Vistas-04.jpeg", "San Miguel Alto view"),
+          gal("location/consectetur-rainforest/Alpine-and-Vistas-05.png", "Mirador San Miguel"),
+          gal("location/consectetur-rainforest/Alpine-and-Vistas-06.jpeg", "Mirador Placeta de Carvajales"),
+          gal("location/consectetur-rainforest/Alpine-and-Vistas-07.jpeg", "Mirador de San Nicolás"),
+          gal("location/consectetur-rainforest/Alpine-and-Vistas-08.jpeg", "Sacromonte hillside vista"),
         ],
       },
     },

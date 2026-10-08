@@ -8,5 +8,5 @@ export default defineCliConfig({
     projectId: projectId || "replace_with_project_id",
     dataset,
   },
-  studioHost: "granadaproductionhouse",
+  studioHost: "costaricaproductioncompany",
 });

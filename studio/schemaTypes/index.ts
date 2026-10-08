@@ -323,11 +323,11 @@ export const location = defineType({
       description: "Must match the location dropdown value (usually same as slug).",
       options: {
         list: [
-          { title: "Moorish Architecture", value: "moorish-architecture" },
-          { title: "Historic and Traditional", value: "historic-and-traditional" },
-          { title: "Mediterranean Coastlines", value: "mediterranean-coastlines" },
-          { title: "Granada City Center & Modern Architecture", value: "granada-city-center" },
-          { title: "Alpine and Vistas", value: "alpine-and-vistas" },
+          { title: "Lorem Valley", value: "lorem-valley" },
+          { title: "Ipsum Coast", value: "ipsum-coast" },
+          { title: "Dolor Highlands", value: "dolor-highlands" },
+          { title: "Amet City", value: "amet-city" },
+          { title: "Consectetur Rainforest", value: "consectetur-rainforest" },
         ],
       },
     }),

@@ -8,8 +8,8 @@ const projectId = process.env.SANITY_STUDIO_PROJECT_ID || "replace_with_project_
 const dataset = process.env.SANITY_STUDIO_DATASET || "production";
 
 export default defineConfig({
-  name: "granada-production-house",
-  title: "Granada Production House",
+  name: "costa-rica-production-company",
+  title: "Costa Rica Production Company",
   projectId,
   dataset,
   plugins: [structureTool({ structure }), visionTool()],
