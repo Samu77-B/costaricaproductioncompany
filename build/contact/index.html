@@ -5,8 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Granada Production House</title>
   <meta name="description" content="Contact Granada Production House to start your next creative project in Granada.">
+  <link rel="canonical" href="https://www.granadaproductionhouse.com/contact/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Granada Production House">
+  <meta property="og:title" content="Contact — Granada Production House">
+  <meta property="og:description" content="Contact Granada Production House to start your next creative project in Granada.">
+  <meta property="og:url" content="https://www.granadaproductionhouse.com/contact/">
+  <meta property="og:image" content="https://www.granadaproductionhouse.com/assets/HomePage/home%20page%20main%20hero%20image.png">
   <link rel="icon" href="/assets/GPH-Logo-Wht - Fav.png" type="image/png">
-  <link rel="stylesheet" href="/css/styles.css?v=35">
+  <link rel="stylesheet" href="/css/styles.css?v=36">
 </head>
 <body data-base="/" data-page="contact">
   <div id="site-header"></div>
@@ -38,7 +45,28 @@
         </p>
       </div>
 
-      <div id="gph-cognito-form"></div>
+      <form class="contact-form" id="gph-contact-form" action="https://formspree.io/f/xvkzkdav" method="POST">
+        <input type="hidden" name="_subject" value="Website enquiry — Granada Production House">
+        <input type="text" name="_gotcha" class="contact-form__hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label>
+          Name
+          <input type="text" name="name" required autocomplete="name">
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label class="contact-form__full">
+          Phone <span class="contact-form__optional">(optional)</span>
+          <input type="tel" name="phone" autocomplete="tel">
+        </label>
+        <label class="contact-form__full">
+          Message
+          <textarea name="message" required></textarea>
+        </label>
+        <p class="contact-form__status" role="status" hidden data-thanks="Thanks — one of the team will be in touch within 24 hours."></p>
+        <button type="submit">Send enquiry</button>
+      </form>
     </div>
   </section>
 
@@ -46,7 +74,8 @@
   <script src="/js/cms-config.js?v=2"></script>
   <script src="/js/components.js?v=10"></script>
   <script src="/js/cms.js?v=4"></script>
-  <script src="/js/forms.js?v=18"></script>
+  <script src="/js/seo.js?v=1"></script>
+  <script src="/js/forms.js?v=19"></script>
   <script src="/js/main.js?v=19"></script>
 </body>
 </html>

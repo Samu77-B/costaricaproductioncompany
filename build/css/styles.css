@@ -884,8 +884,9 @@ button {
   text-decoration: underline;
 }
 
-#gph-cognito-form,
-#location-enquiry-form {
+#gph-contact-form,
+#location-enquiry-form,
+.lightbox__enquiry-form {
   width: 100%;
 }
 
@@ -897,42 +898,47 @@ button {
   min-width: 0;
 }
 
-#gph-cognito-form iframe,
-#location-enquiry-form iframe {
-  display: block;
-  width: 100%;
-  border: 0;
-  min-height: 580px;
-}
-
-.contact-form:not(#gph-cognito-form):not(#location-enquiry-form) {
+.contact-form {
+  position: relative;
   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
-.contact-form:not(#gph-cognito-form):not(#location-enquiry-form) label {
+.contact-form label {
   display: grid;
   gap: 0.4rem;
   font-size: 0.95rem;
 }
 
-.contact-form:not(#gph-cognito-form):not(#location-enquiry-form) input,
-.contact-form:not(#gph-cognito-form):not(#location-enquiry-form) textarea,
-.contact-form:not(#gph-cognito-form):not(#location-enquiry-form) select {
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   padding: 0.85rem 1rem;
   border: 1px solid rgba(18, 16, 14, 0.2);
   background: #fff;
   font: inherit;
   color: #1a1a1a;
+  border-radius: 0;
 }
 
-.contact-form:not(#gph-cognito-form):not(#location-enquiry-form) textarea {
+.contact-form input[readonly] {
+  background: #f4f0ea;
+  color: #2a2a2a;
+}
+
+.contact-form textarea {
   min-height: 140px;
   resize: vertical;
 }
 
-.contact-form:not(#gph-cognito-form):not(#location-enquiry-form) button {
+.contact-form__full,
+.contact-form__status,
+.contact-form button {
+  grid-column: 1 / -1;
+}
+
+.contact-form button {
   justify-self: start;
   padding: 0.9rem 1.6rem;
   background: #12100e;
@@ -940,10 +946,45 @@ button {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-size: 0.85rem;
+  border: 0;
+  cursor: pointer;
 }
 
-.contact-form:not(#gph-cognito-form):not(#location-enquiry-form) button:hover {
+.contact-form button:hover {
   background: #2a2622;
+}
+
+.contact-form button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.contact-form__optional {
+  color: #6b6560;
+  font-size: 0.82em;
+  font-weight: 400;
+}
+
+.contact-form__hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-form__status {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.contact-form__status--ok {
+  color: #2a5a3a;
+}
+
+.contact-form__status--err {
+  color: #8a2a2a;
 }
 
 .contact-form--short textarea {
@@ -1233,11 +1274,15 @@ body.lightbox-open {
 }
 
 .lightbox--enquiry .lightbox__enquiry-form {
-  min-height: 320px;
+  min-height: 0;
 }
 
-.lightbox--enquiry .lightbox__enquiry-form iframe {
-  background: transparent;
+.lightbox--enquiry .contact-form {
+  grid-template-columns: 1fr;
+}
+
+.lightbox--enquiry .contact-form textarea {
+  min-height: 90px;
 }
 
 .lightbox__caption {
@@ -1365,7 +1410,8 @@ body.lightbox-open {
   .page-section__grid,
   .contact-grid,
   .page-cards,
-  .team-grid {
+  .team-grid,
+  .contact-form {
     grid-template-columns: 1fr;
   }
 
