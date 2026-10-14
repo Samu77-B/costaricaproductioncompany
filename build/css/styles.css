@@ -15,13 +15,18 @@ html {
   --site-max: 1180px;
   --site-content-width: min(var(--site-max), calc(100% - 2 * var(--site-gutter)));
   --site-content-offset: max(var(--site-gutter), calc((100% - var(--site-max)) / 2));
+  --color-blue: #0d2069;
+  --color-red: #ec556b;
+  --color-bg: #fff;
+  --color-text: #1a1a1a;
+  --color-text-muted: #2a2a2a;
 }
 
 body {
   font-family: "freight-text-pro", "FreightText Pro", "freight-display-pro", "Freight Display Pro", Georgia, "Times New Roman", serif;
   font-weight: 400;
-  color: #1a1a1a;
-  background: #fff;
+  color: var(--color-text);
+  background: var(--color-bg);
   line-height: 1.5;
 }
 
@@ -76,18 +81,18 @@ button {
 }
 
 .site-header--scrolled {
-  background: rgba(18, 16, 14, 0.92);
+  background: rgba(13, 32, 105, 0.94);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .page-about .site-header {
-  background: rgba(18, 16, 14, 0.92);
+  background: rgba(13, 32, 105, 0.94);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .site-header__logo {
   width: auto;
-  max-width: min(42vw, 220px);
+  max-width: min(52vw, 280px);
   height: auto;
 }
 
@@ -131,7 +136,7 @@ button {
   align-items: center;
   justify-content: center;
   padding: 6rem 2rem 2rem;
-  background: rgba(18, 16, 14, 0.96);
+  background: rgba(13, 32, 105, 0.96);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -156,6 +161,10 @@ button {
   letter-spacing: 0.04em;
 }
 
+.site-nav__list a:hover {
+  color: var(--color-red);
+}
+
 /* Hero carousel */
 
 .hero {
@@ -165,7 +174,7 @@ button {
   min-height: 100vh;
   overflow: hidden;
   color: #fff;
-  background: #12100e;
+  background: var(--color-blue);
 }
 
 .hero__slides {
@@ -302,9 +311,9 @@ button {
   z-index: 2;
   background: linear-gradient(
     90deg,
-    rgba(10, 8, 6, 0.55) 0%,
-    rgba(10, 8, 6, 0.25) 45%,
-    rgba(10, 8, 6, 0.1) 100%
+    rgba(13, 32, 105, 0.55) 0%,
+    rgba(13, 32, 105, 0.25) 45%,
+    rgba(13, 32, 105, 0.1) 100%
   );
 }
 
@@ -370,6 +379,7 @@ button {
   line-height: 1.15;
   margin-bottom: clamp(2rem, 4vw, 3rem);
   max-width: 18ch;
+  color: var(--color-blue);
 }
 
 .about__block + .about__block {
@@ -381,6 +391,7 @@ button {
   font-size: clamp(1.35rem, 2.2vw, 1.75rem);
   font-weight: 700;
   margin-bottom: 0.75rem;
+  color: var(--color-blue);
 }
 
 .about__text {
@@ -410,7 +421,7 @@ button {
 /* Footer */
 
 .site-footer {
-  background: #12100e;
+  background: var(--color-blue);
   color: #f4f0ea;
   padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 6vw, 5rem) 2rem;
 }
@@ -425,7 +436,7 @@ button {
 
 .site-footer__brand img {
   width: auto;
-  max-width: 180px;
+  max-width: 240px;
   margin-bottom: 1rem;
 }
 
@@ -456,7 +467,7 @@ button {
 }
 
 .site-footer__col a:hover {
-  color: #fff;
+  color: var(--color-red);
 }
 
 .site-footer__bottom {
@@ -477,7 +488,7 @@ button {
 }
 
 .site-footer__credit a:hover {
-  color: #fff;
+  color: var(--color-red);
 }
 
 .site-footer__locations {
@@ -494,7 +505,7 @@ button {
   min-height: 420px;
   overflow: hidden;
   color: #fff;
-  background: #12100e;
+  background: var(--color-blue);
 }
 
 .page-hero__media {
@@ -543,9 +554,9 @@ button {
   z-index: 1;
   background: linear-gradient(
     90deg,
-    rgba(10, 8, 6, 0.62) 0%,
-    rgba(10, 8, 6, 0.28) 50%,
-    rgba(10, 8, 6, 0.18) 100%
+    rgba(13, 32, 105, 0.62) 0%,
+    rgba(13, 32, 105, 0.28) 50%,
+    rgba(13, 32, 105, 0.18) 100%
   );
 }
 
@@ -664,12 +675,12 @@ button {
 }
 
 .page-section__intro .page-hero__eyebrow {
-  color: #3d3d3d;
+  color: var(--color-red);
   opacity: 1;
 }
 
 .page-section__intro .page-hero__title {
-  color: #1a1a1a;
+  color: var(--color-blue);
   font-size: clamp(2rem, 4.5vw, 3.35rem);
   max-width: 14ch;
   text-shadow: none;
@@ -682,6 +693,7 @@ button {
   line-height: 1.15;
   margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
   max-width: 22ch;
+  color: var(--color-blue);
 }
 
 .page-section__subhead {
@@ -689,6 +701,7 @@ button {
   font-size: clamp(1.25rem, 2vw, 1.6rem);
   font-weight: 700;
   margin: clamp(1.75rem, 3vw, 2.5rem) 0 0.75rem;
+  color: var(--color-blue);
 }
 
 .page-section__text {
@@ -703,6 +716,7 @@ button {
 }
 
 .page-section__text-link {
+  color: var(--color-red);
   text-decoration: underline;
   text-underline-offset: 0.12em;
 }
@@ -746,7 +760,7 @@ button {
 .page-card__image {
   overflow: hidden;
   margin-bottom: 1rem;
-  background: #12100e;
+  background: var(--color-blue);
 }
 
 .page-card__image img {
@@ -765,6 +779,7 @@ button {
   font-size: clamp(1.15rem, 2vw, 1.4rem);
   font-weight: 600;
   margin-bottom: 0.4rem;
+  color: var(--color-blue);
 }
 
 .page-card__text {
@@ -818,6 +833,7 @@ button {
   font-family: "freight-display-pro", "Freight Display Pro", Georgia, serif;
   font-size: 1.25rem;
   font-weight: 600;
+  color: var(--color-blue);
 }
 
 .team-card__role {
@@ -838,7 +854,12 @@ button {
   font-size: 0.95rem;
 }
 
+.team-card__email a {
+  color: var(--color-blue);
+}
+
 .team-card__email a:hover {
+  color: var(--color-red);
   text-decoration: underline;
 }
 
@@ -858,6 +879,7 @@ button {
   font-size: clamp(1.25rem, 2vw, 1.55rem);
   font-weight: 600;
   margin-bottom: 0.55rem;
+  color: var(--color-blue);
 }
 
 .service-item__text {
@@ -880,7 +902,12 @@ button {
   color: #2a2a2a;
 }
 
+.contact-details a {
+  color: var(--color-blue);
+}
+
 .contact-details a:hover {
+  color: var(--color-red);
   text-decoration: underline;
 }
 
@@ -941,7 +968,7 @@ button {
 .contact-form button {
   justify-self: start;
   padding: 0.9rem 1.6rem;
-  background: #12100e;
+  background: var(--color-blue);
   color: #fff;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -951,7 +978,7 @@ button {
 }
 
 .contact-form button:hover {
-  background: #2a2622;
+  background: var(--color-red);
 }
 
 .contact-form button:disabled {
@@ -984,7 +1011,7 @@ button {
 }
 
 .contact-form__status--err {
-  color: #8a2a2a;
+  color: var(--color-red);
 }
 
 .contact-form--short textarea {
@@ -1012,8 +1039,8 @@ button {
   align-items: center;
   justify-content: center;
   padding: 0.9rem 1.35rem;
-  background: #12100e;
-  border: 1px solid #12100e;
+  background: var(--color-blue);
+  border: 1px solid var(--color-blue);
   border-radius: 0.55rem;
   color: #fff;
   font-size: 0.82rem;
@@ -1024,8 +1051,8 @@ button {
 }
 
 .location-enquire-cta:hover {
-  background: #2a2622;
-  border-color: #2a2622;
+  background: var(--color-red);
+  border-color: var(--color-red);
   color: #fff;
 }
 
@@ -1109,13 +1136,13 @@ button {
   font-size: 0.82rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #12100e;
+  color: var(--color-blue);
   transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .location-back:hover {
-  background: #12100e;
-  border-color: #12100e;
+  background: var(--color-red);
+  border-color: var(--color-red);
   color: #fff;
 }
 
@@ -1128,7 +1155,7 @@ button {
 
 .work-grid__item {
   overflow: hidden;
-  background: #12100e;
+  background: var(--color-blue);
   margin: 0;
 }
 
@@ -1154,7 +1181,7 @@ button {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  background: #12100e;
+  background: var(--color-blue);
 }
 
 .gallery-thumb,
@@ -1190,7 +1217,7 @@ body.lightbox-open {
 .lightbox__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(10, 8, 6, 0.92);
+  background: rgba(13, 32, 105, 0.92);
 }
 
 .lightbox__panel {
@@ -1241,7 +1268,7 @@ body.lightbox-open {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #12100e;
+  background: var(--color-blue);
 }
 
 .lightbox--enquiry .lightbox__image {
@@ -1467,9 +1494,9 @@ body.lightbox-open {
   .hero__overlay {
     background: linear-gradient(
       to bottom,
-      rgba(10, 8, 6, 0.35) 0%,
-      rgba(10, 8, 6, 0.2) 45%,
-      rgba(10, 8, 6, 0.65) 100%
+      rgba(13, 32, 105, 0.35) 0%,
+      rgba(13, 32, 105, 0.2) 45%,
+      rgba(13, 32, 105, 0.65) 100%
     );
   }
 
@@ -1499,9 +1526,9 @@ body.lightbox-open {
   .page-hero__overlay {
     background: linear-gradient(
       to bottom,
-      rgba(10, 8, 6, 0.35) 0%,
-      rgba(10, 8, 6, 0.25) 40%,
-      rgba(10, 8, 6, 0.7) 100%
+      rgba(13, 32, 105, 0.35) 0%,
+      rgba(13, 32, 105, 0.25) 40%,
+      rgba(13, 32, 105, 0.7) 100%
     );
   }
 
@@ -1517,7 +1544,7 @@ body.lightbox-open {
 
   .site-header__logo--mobile {
     display: block;
-    max-width: 72px;
+    max-width: 124px;
   }
 
   .hero__pan img {

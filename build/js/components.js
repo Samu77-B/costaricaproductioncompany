@@ -41,12 +41,12 @@
         <a href="${resolve("index.html")}" class="site-header__brand" aria-label="Costa Rica Production Company home">
           <img
             class="site-header__logo site-header__logo--desktop"
-            src="${base}assets/GPH-Logo-Wht.png"
+            src="${base}assets/costa-rica-logo-stnd.png"
             alt="Costa Rica Production Company"
           >
           <img
             class="site-header__logo site-header__logo--mobile"
-            src="${base}assets/GPH-Logo-Wht - Mbl.png"
+            src="${base}assets/costa-rica-logo-mbl.png"
             alt="Costa Rica Production Company"
           >
         </a>
@@ -80,7 +80,7 @@
       <footer class="site-footer" id="contact">
         <div class="site-footer__grid">
           <div class="site-footer__brand">
-            <img src="${base}assets/GPH-Logo-Wht.png" alt="Costa Rica Production Company">
+            <img src="${base}assets/costa-rica-logo-stnd.png" alt="Costa Rica Production Company">
             <p data-cms-footer="tagline">Boutique photoshoot production company based in Costa Rica.</p>
           </div>
 
