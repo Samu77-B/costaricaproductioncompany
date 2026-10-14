@@ -24,7 +24,7 @@ loadEnvFile(join(rootDir, ".env"));
 const projectId = process.env.SANITY_PROJECT_ID;
 const dataset = process.env.SANITY_DATASET || "production";
 
-if (!projectId || projectId === "your_project_id") {
+if (!projectId || projectId === "your_project_id" || projectId === "your-project-id") {
   console.error("Set SANITY_PROJECT_ID in .env (copy from .env.example).");
   process.exit(1);
 }

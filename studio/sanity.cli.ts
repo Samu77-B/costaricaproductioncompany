@@ -5,7 +5,7 @@ const dataset = process.env.SANITY_STUDIO_DATASET || "production";
 
 export default defineCliConfig({
   api: {
-    projectId: projectId || "replace_with_project_id",
+    projectId: projectId || "your-project-id",
     dataset,
   },
   studioHost: "costaricaproductioncompany",

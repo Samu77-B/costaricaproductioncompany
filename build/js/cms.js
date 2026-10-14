@@ -2,7 +2,7 @@
   const config = window.GPH_CMS || {};
   const projectId = (config.projectId || "").trim();
 
-  if (!projectId || projectId === "your_project_id") {
+  if (!projectId || projectId === "your_project_id" || projectId === "your-project-id") {
     return;
   }
 
@@ -323,6 +323,9 @@
         content.innerHTML = (headline ? headline.outerHTML : "") + blocksHtml;
       }
     }
+
+    // A static video hero should not be replaced by CMS image slides.
+    if (document.querySelector(".hero__video")) return;
 
     // Unlike the galleries, a slideshow with no slides leaves a blank hero, so
     // an empty list keeps whatever the page already shows.

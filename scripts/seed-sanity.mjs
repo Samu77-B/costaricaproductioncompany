@@ -25,7 +25,7 @@ const projectId = process.env.SANITY_PROJECT_ID;
 const dataset = process.env.SANITY_DATASET || "production";
 const token = process.env.SANITY_WRITE_TOKEN;
 
-if (!projectId || projectId === "your_project_id") {
+if (!projectId || projectId === "your_project_id" || projectId === "your-project-id") {
   console.error("Set SANITY_PROJECT_ID in .env");
   process.exit(1);
 }
@@ -80,7 +80,7 @@ const documents = [
     defaultMetaDescription:
       "A boutique photoshoot production company based in Costa Rica, specialising in fashion, commercial, editorial and advertising print shoots, film production and events.",
     contactEmail: "hola@costaricaproductioncompany.com",
-    enquiryEmail: "enquiries@costaricaproductioncompany.com",
+    enquiryEmail: "hola@costaricaproductioncompany.com",
     phone: "",
     instagramUrl: "https://www.instagram.com/costaricaproductioncompany",
     footerTagline: "Boutique photoshoot production company based in Costa Rica.",
@@ -151,8 +151,8 @@ const documents = [
       ),
       blockWithLink(
         "For non-project enquiries, please email us at ",
-        "mailto:enquiries@costaricaproductioncompany.com",
-        "enquiries@costaricaproductioncompany.com",
+        "mailto:hola@costaricaproductioncompany.com",
+        "hola@costaricaproductioncompany.com",
         ".",
         "c2"
       ),

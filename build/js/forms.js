@@ -117,12 +117,12 @@
               (data) => {
                 const msg =
                   (data && data.error) ||
-                  "Something went wrong. Please email enquiries@costaricaproductioncompany.com.";
+                  "Something went wrong. Please email hola@costaricaproductioncompany.com.";
                 throw new Error(msg);
               },
               () => {
                 throw new Error(
-                  "Something went wrong. Please email enquiries@costaricaproductioncompany.com."
+                  "Something went wrong. Please email hola@costaricaproductioncompany.com."
                 );
               }
             );
@@ -141,7 +141,7 @@
             form,
             "err",
             err.message ||
-              "Something went wrong. Please email enquiries@costaricaproductioncompany.com."
+              "Something went wrong. Please email hola@costaricaproductioncompany.com."
           );
         })
         .finally(() => {

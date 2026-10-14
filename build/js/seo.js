@@ -72,7 +72,7 @@
       url: ORIGIN + "/",
       image: DEFAULT_IMAGE,
       description: desc,
-      email: "enquiries@costaricaproductioncompany.com",
+      email: "hola@costaricaproductioncompany.com",
       address: {
         "@type": "PostalAddress",
         addressCountry: "CR",
