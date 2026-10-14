@@ -4,6 +4,7 @@
   "description": "Costa Rica Production Company website — static build + Sanity CMS",
   "type": "module",
   "scripts": {
+    "build": "echo skip-build",
     "studio": "npm run dev --prefix studio",
     "studio:build": "npm run build --prefix studio",
     "studio:deploy": "npm run deploy --prefix studio",
