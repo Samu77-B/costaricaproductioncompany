@@ -20,11 +20,12 @@
   ];
 
   const locationLinks = [
-    { href: "location/lorem-valley/", label: "Lorem Valley" },
-    { href: "location/ipsum-coast/", label: "Ipsum Coast" },
-    { href: "location/dolor-highlands/", label: "Dolor Highlands" },
-    { href: "location/amet-city/", label: "Amet City" },
-    { href: "location/consectetur-rainforest/", label: "Consectetur Rainforest" },
+    { href: "location/abandoned/", label: "Abandoned" },
+    { href: "location/beaches/", label: "Beaches" },
+    { href: "location/city-urban/", label: "City Urban" },
+    { href: "location/homes-hotels/", label: "Homes & Hotels" },
+    { href: "location/rivers-waterfalls/", label: "Rivers & Waterfalls" },
+    { href: "location/rural-countryside/", label: "Rural Countryside" },
   ];
 
   function resolve(path) {

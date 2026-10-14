@@ -37,32 +37,38 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.costaricaproductioncompany.com/location/lorem-valley/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://www.costaricaproductioncompany.com/location/abandoned/</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.costaricaproductioncompany.com/location/ipsum-coast/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://www.costaricaproductioncompany.com/location/beaches/</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.costaricaproductioncompany.com/location/dolor-highlands/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://www.costaricaproductioncompany.com/location/city-urban/</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.costaricaproductioncompany.com/location/amet-city/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://www.costaricaproductioncompany.com/location/homes-hotels/</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.costaricaproductioncompany.com/location/consectetur-rainforest/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://www.costaricaproductioncompany.com/location/rivers-waterfalls/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.costaricaproductioncompany.com/location/rural-countryside/</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

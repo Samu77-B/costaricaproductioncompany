@@ -2,11 +2,12 @@
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvkzkdav";
 
   const LOCATION_LABELS = {
-    "lorem-valley": "Lorem Valley",
-    "ipsum-coast": "Ipsum Coast",
-    "dolor-highlands": "Dolor Highlands",
-    "amet-city": "Amet City",
-    "consectetur-rainforest": "Consectetur Rainforest",
+    "abandoned": "Abandoned",
+    "beaches": "Beaches",
+    "city-urban": "City Urban",
+    "homes-hotels": "Homes & Hotels",
+    "rivers-waterfalls": "Rivers & Waterfalls",
+    "rural-countryside": "Rural Countryside",
   };
 
   function escapeHtml(value) {
