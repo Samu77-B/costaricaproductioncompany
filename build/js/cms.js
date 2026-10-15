@@ -20,7 +20,7 @@
   }`;
 
   const GALLERY_FRAGMENT = `{
-    alt,
+    "alt": coalesce(alt, image.alt),
     caption,
     "url": image.asset->url,
     "filename": image.asset->originalFilename
@@ -232,12 +232,22 @@
     return String(filename).replace(/\.[^.]+$/, "");
   }
 
+  function galleryTitle(item) {
+    if (hasText(item && item.alt)) return item.alt.trim();
+    if (hasText(item && item.filename)) return imageRef(item.filename);
+    return "";
+  }
+
   function setImage(selector, image, width) {
     const el = document.querySelector(selector);
     if (!el || !image || !image.url) return;
     el.src = imageUrl(image.url, width);
-    if (hasText(image.alt)) el.alt = image.alt;
-    if (hasText(image.filename)) el.dataset.imageRef = imageRef(image.filename);
+    if (hasText(image.alt)) el.alt = image.alt.trim();
+    const title = galleryTitle(image);
+    if (title) {
+      el.dataset.imageRef = title;
+      el.dataset.lightboxCaption = title;
+    }
   }
 
   function spanToHtml(span, markDefs) {
@@ -553,10 +563,11 @@
     if (!gallery) return;
     gallery.innerHTML = items
       .map((item) => {
-        const ref = hasText(item.filename)
-          ? ` data-image-ref="${escapeHtml(imageRef(item.filename))}"`
-          : "";
-        return `<img src="${imageUrl(item.url, 1400)}" alt="${escapeHtml(item.alt || "")}"${ref}>`;
+        const title = galleryTitle(item);
+        const alt = hasText(item.alt) ? item.alt.trim() : title;
+        const ref = title ? ` data-image-ref="${escapeHtml(title)}"` : "";
+        const caption = title ? ` data-lightbox-caption="${escapeHtml(title)}"` : "";
+        return `<img src="${imageUrl(item.url, 1400)}" alt="${escapeHtml(alt)}"${ref}${caption}>`;
       })
       .join("");
   }

@@ -247,7 +247,9 @@
 
       const src = img.getAttribute("src") || img.src || "";
       const imageRef =
-        img.dataset.imageRef || window.GPHForms.imageRefFromSrc(src);
+        (img.getAttribute("alt") || "").trim() ||
+        img.dataset.imageRef ||
+        window.GPHForms.imageRefFromSrc(src);
 
       window.GPHForms.mountLightboxEnquiry(enquiryForm, {
         locationSlug,

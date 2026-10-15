@@ -356,7 +356,12 @@ export const location = defineType({
           type: "object",
           fields: [
             defineField({ name: "image", type: "image", options: { hotspot: true } }),
-            defineField({ name: "alt", type: "string" }),
+            defineField({
+              name: "alt",
+              title: "Alt text / image title",
+              type: "string",
+              description: "Shown as the photo title in the lightbox and on location enquiries.",
+            }),
           ],
           preview: { select: { title: "alt", media: "image" } },
         },
