@@ -1,5 +1,5 @@
 (function () {
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvkzkdav";
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/mjygporp";
 
   const LOCATION_LABELS = {
     "abandoned": "Abandoned",
