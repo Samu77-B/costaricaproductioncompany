@@ -369,17 +369,49 @@
   window.addEventListener("scroll", setHeaderState, { passive: true });
   window.addEventListener("resize", setHeaderState);
 
+  function initHeroSound(video) {
+    const button = document.querySelector(".hero__sound");
+    if (!button) return;
+
+    const sync = () => {
+      const soundOn = !video.muted;
+      button.setAttribute("aria-pressed", soundOn ? "true" : "false");
+      button.setAttribute("aria-label", soundOn ? "Mute video" : "Unmute video");
+    };
+
+    button.addEventListener("click", () => {
+      video.muted = !video.muted;
+      if (!video.muted) {
+        const attempt = video.play();
+        if (attempt && typeof attempt.catch === "function") {
+          attempt.catch(() => {});
+        }
+      }
+      sync();
+    });
+
+    sync();
+  }
+
   function initHeroVideo() {
     const video = document.querySelector(".hero__video");
     if (!video) return;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const reveal = () => video.classList.add("is-ready");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    initHeroSound(video);
+
+    if (reducedMotion) {
       video.pause();
       video.removeAttribute("autoplay");
+      if (video.readyState >= 2) reveal();
+      else video.addEventListener("loadeddata", reveal, { once: true });
       return;
     }
 
     const play = () => {
+      reveal();
       const attempt = video.play();
       if (attempt && typeof attempt.catch === "function") {
         attempt.catch(() => {});
