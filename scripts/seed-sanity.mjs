@@ -90,8 +90,20 @@ const documents = [
     _type: "homePage",
     heroCopy:
       "A Boutique photoshoot production company, based in Costa Rica, specialising in fashion, commercial, editorial & advertising print shoots, film production and events.",
-    aboutHeadline: "We translate complexed creative concepts into iconic visual assets.",
+    aboutHeadline: "Hey There!",
     aboutBlocks: [
+      {
+        _key: "intro1",
+        body: "Looking to bring your creative vision to life in the stunning landscapes of Costa Rica? Look no further! Costa Rica Production Company is here to make it happen.",
+      },
+      {
+        _key: "intro2",
+        body: "We're a boutique photoshoot production company based in Costa Rica, specialising in fashion, commercial, editorial and advertising print shoots, film production and events.",
+      },
+      {
+        _key: "intro3",
+        body: "We're here to help you bring your creative vision to life in the stunning landscapes of Costa Rica.",
+      },
       {
         _key: "landscape",
         subhead: "The landscape",
@@ -226,7 +238,7 @@ const documents = [
     _type: "locationsIndexPage",
     metaTitle: "Locations — Costa Rica Production Company",
     metaDescription:
-      "Explore curated shoot locations across Costa Rica — Lorem Valley, Ipsum Coast, Dolor Highlands, Amet City, and Consectetur Rainforest.",
+      "Explore curated shoot locations across Costa Rica: abandoned spaces, beaches, city streets, homes and hotels, rivers and waterfalls, and rural countryside.",
     heroEyebrow: "Locations",
     heroTitle: "Costa Rica is our backyard",
     bodyParagraphs: [
@@ -238,98 +250,108 @@ const documents = [
     ],
   },
   {
-    _id: "location-lorem-valley",
+    _id: "location-abandoned",
     _type: "location",
-    title: "Lorem Valley",
-    slug: slug("lorem-valley"),
-    formLocationKey: "lorem-valley",
+    title: "Abandoned",
+    slug: slug("abandoned"),
+    formLocationKey: "abandoned",
     sortOrder: 1,
     cardDescription:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    metaTitle: "Lorem Valley — Costa Rica Production Company",
-    metaDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placeholder shoot locations in Costa Rica.",
+      "Disused buildings, weathered interiors, and offbeat structures for editorial and fashion work.",
+    metaTitle: "Abandoned — Costa Rica Production Company",
+    metaDescription:
+      "Disused buildings, weathered interiors, and offbeat structures for editorial and fashion work.",
     heroEyebrow: "Locations",
-    heroTitle: "Lorem Valley",
+    heroTitle: "Abandoned",
     heroLede:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Disused buildings, weathered interiors, and offbeat structures for editorial and fashion work.",
     introText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "From empty houses to forgotten industrial corners, these spaces give campaigns a raw, cinematic edge. We know which sites are shoot-ready and how to get you in.",
     enquiryIntro: "Share a few details and one of the team will be in touch within 48 hours.",
   },
   {
-    _id: "location-ipsum-coast",
+    _id: "location-beaches",
     _type: "location",
-    title: "Ipsum Coast",
-    slug: slug("ipsum-coast"),
-    formLocationKey: "ipsum-coast",
+    title: "Beaches",
+    slug: slug("beaches"),
+    formLocationKey: "beaches",
     sortOrder: 2,
-    cardDescription:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    metaTitle: "Ipsum Coast — Costa Rica Production Company",
-    metaDescription: "Ut enim ad minim veniam, quis nostrud exercitation. Placeholder shoot locations in Costa Rica.",
+    cardDescription: "Pacific and Caribbean coastline, from Tamarindo and Conchal to Manuel Antonio.",
+    metaTitle: "Beaches — Costa Rica Production Company",
+    metaDescription: "Pacific and Caribbean coastline, from Tamarindo and Conchal to Manuel Antonio.",
     heroEyebrow: "Locations",
-    heroTitle: "Ipsum Coast",
-    heroLede:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    heroTitle: "Beaches",
+    heroLede: "Pacific and Caribbean coastline, from Tamarindo and Conchal to Manuel Antonio.",
     introText:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "Costa Rica's coasts shift fast: pale sand, black volcanic shore, jungle meeting the sea. We pick beaches for the light, the tide, and the look you need.",
     enquiryIntro: "Share a few details and one of the team will be in touch within 48 hours.",
   },
   {
-    _id: "location-dolor-highlands",
+    _id: "location-city-urban",
     _type: "location",
-    title: "Dolor Highlands",
-    slug: slug("dolor-highlands"),
-    formLocationKey: "dolor-highlands",
+    title: "City Urban",
+    slug: slug("city-urban"),
+    formLocationKey: "city-urban",
     sortOrder: 3,
-    cardDescription:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    metaTitle: "Dolor Highlands — Costa Rica Production Company",
-    metaDescription: "Duis aute irure dolor in reprehenderit in voluptate. Placeholder shoot locations in Costa Rica.",
+    cardDescription: "San Jose streets, markets, and lived-in neighbourhoods across the Central Valley.",
+    metaTitle: "City Urban — Costa Rica Production Company",
+    metaDescription: "San Jose streets, markets, and lived-in neighbourhoods across the Central Valley.",
     heroEyebrow: "Locations",
-    heroTitle: "Dolor Highlands",
-    heroLede:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    heroTitle: "City Urban",
+    heroLede: "San Jose streets, markets, and lived-in neighbourhoods across the Central Valley.",
     introText:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Colour, texture, and everyday life: Barrio Amon, markets, and city streets that read as fashion and commercial backdrops without looking staged.",
     enquiryIntro: "Share a few details and one of the team will be in touch within 48 hours.",
   },
   {
-    _id: "location-amet-city",
+    _id: "location-homes-hotels",
     _type: "location",
-    title: "Amet City",
-    slug: slug("amet-city"),
-    formLocationKey: "amet-city",
+    title: "Homes & Hotels",
+    slug: slug("homes-hotels"),
+    formLocationKey: "homes-hotels",
     sortOrder: 4,
-    cardDescription:
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    metaTitle: "Amet City — Costa Rica Production Company",
-    metaDescription: "Excepteur sint occaecat cupidatat non proident. Placeholder shoot locations in Costa Rica.",
+    cardDescription: "Houses, lodges, and hotels, from jungle treehouses to boutique resorts.",
+    metaTitle: "Homes & Hotels — Costa Rica Production Company",
+    metaDescription: "Houses, lodges, and hotels, from jungle treehouses to boutique resorts.",
     heroEyebrow: "Locations",
-    heroTitle: "Amet City",
-    heroLede:
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    heroTitle: "Homes & Hotels",
+    heroLede: "Houses, lodges, and hotels, from jungle treehouses to boutique resorts.",
     introText:
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+      "Interiors and grounds with a point of view: rainforest lodges, coastal houses, and hotels we can book, permit, and run as a full production base.",
     enquiryIntro: "Share a few details and one of the team will be in touch within 48 hours.",
   },
   {
-    _id: "location-consectetur-rainforest",
+    _id: "location-rivers-waterfalls",
     _type: "location",
-    title: "Consectetur Rainforest",
-    slug: slug("consectetur-rainforest"),
-    formLocationKey: "consectetur-rainforest",
+    title: "Rivers & Waterfalls",
+    slug: slug("rivers-waterfalls"),
+    formLocationKey: "rivers-waterfalls",
     sortOrder: 5,
-    cardDescription:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
-    metaTitle: "Consectetur Rainforest — Costa Rica Production Company",
-    metaDescription: "Sed ut perspiciatis unde omnis iste natus error. Placeholder shoot locations in Costa Rica.",
+    cardDescription: "Rivers, waterfalls, and rainforest water: Rio Celeste, Pacuare, and beyond.",
+    metaTitle: "Rivers & Waterfalls — Costa Rica Production Company",
+    metaDescription: "Rivers, waterfalls, and rainforest water: Rio Celeste, Pacuare, and beyond.",
     heroEyebrow: "Locations",
-    heroTitle: "Consectetur Rainforest",
-    heroLede:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+    heroTitle: "Rivers & Waterfalls",
+    heroLede: "Rivers, waterfalls, and rainforest water: Rio Celeste, Pacuare, and beyond.",
     introText:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+      "Moving water, jungle canopy, and that particular Costa Rican green. These locations need local knowledge for access, timing, and weather. We handle it.",
+    enquiryIntro: "Share a few details and one of the team will be in touch within 48 hours.",
+  },
+  {
+    _id: "location-rural-countryside",
+    _type: "location",
+    title: "Rural Countryside",
+    slug: slug("rural-countryside"),
+    formLocationKey: "rural-countryside",
+    sortOrder: 6,
+    cardDescription: "Fincas, highland valleys, and open countryside across Costa Rica.",
+    metaTitle: "Rural Countryside — Costa Rica Production Company",
+    metaDescription: "Fincas, highland valleys, and open countryside across Costa Rica.",
+    heroEyebrow: "Locations",
+    heroTitle: "Rural Countryside",
+    heroLede: "Fincas, highland valleys, and open countryside across Costa Rica.",
+    introText:
+      "Volcano views, working farms, and quiet rural roads. A different pace and a different palette, often only a short drive from the coast or the city.",
     enquiryIntro: "Share a few details and one of the team will be in touch within 48 hours.",
   },
   {
@@ -379,14 +401,26 @@ const documents = [
   },
 ];
 
+const obsoleteIds = [
+  "location-lorem-valley",
+  "location-ipsum-coast",
+  "location-dolor-highlands",
+  "location-amet-city",
+  "location-consectetur-rainforest",
+];
+
 async function main() {
   const transaction = client.transaction();
   for (const doc of documents) {
     transaction.createOrReplace(doc);
   }
+  for (const id of obsoleteIds) {
+    transaction.delete(id);
+    transaction.delete(`drafts.${id}`);
+  }
   await transaction.commit();
   console.log(`Seeded ${documents.length} documents into ${projectId}/${dataset}.`);
-  console.log("Next: open Studio, upload images, then Publish.");
+  console.log("Next: npm run content:import-images, then open Studio and Publish.");
 }
 
 main().catch((err) => {

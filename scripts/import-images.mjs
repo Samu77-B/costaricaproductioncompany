@@ -6,13 +6,14 @@
  * overwrite, or --dry to preview without writing.
  */
 import { createClient } from "@sanity/client";
-import { createReadStream, existsSync, readFileSync, statSync } from "node:fs";
-import { basename, dirname, join } from "node:path";
+import { createReadStream, existsSync, readdirSync, readFileSync } from "node:fs";
+import { basename, dirname, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
 const buildDir = join(rootDir, "build");
+const assetsDir = join(buildDir, "assets");
 
 function loadEnvFile(path) {
   if (!existsSync(path)) return;
@@ -49,29 +50,79 @@ const client = createClient({
   useCdn: false,
 });
 
+const IMAGE_EXT = new Set([".jpg", ".jpeg", ".png", ".webp", ".gif"]);
+const HASH_DUP = /-[a-f0-9]{32}\./i;
+
 /** image: [relative path under build/, alt text] */
 const img = (path, alt) => ({ path, alt });
 /** gallery entry: [relative path, alt, optional caption] */
 const gal = (path, alt, caption) => ({ path, alt, caption });
+
+function altFromName(name) {
+  return basename(name, extname(name)).replace(/\s+/g, " ").trim();
+}
+
+function folderImages(folder) {
+  const dir = join(assetsDir, folder);
+  return readdirSync(dir)
+    .filter((name) => IMAGE_EXT.has(extname(name).toLowerCase()))
+    .filter((name) => !HASH_DUP.test(name))
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }));
+}
+
+function locationEntry(loc) {
+  const names = folderImages(loc.folder);
+  if (!names.length) throw new Error(`No images in assets/${loc.folder}`);
+  const heroName = names.includes(loc.hero) ? loc.hero : names[0];
+  const sideName = names.find((name) => name !== heroName) || heroName;
+  return {
+    id: `location-${loc.slug}`,
+    label: `Location — ${loc.title}`,
+    single: {
+      heroImage: img(`assets/${loc.folder}/${heroName}`, loc.title),
+      sideImage: img(`assets/${loc.folder}/${sideName}`, loc.title),
+    },
+    arrays: {
+      gallery: {
+        field: "image",
+        items: names.map((name) => gal(`assets/${loc.folder}/${name}`, altFromName(name))),
+      },
+    },
+  };
+}
+
+const locations = [
+  { slug: "abandoned", title: "Abandoned", folder: "abandoned", hero: "ABANDONED1.png" },
+  { slug: "beaches", title: "Beaches", folder: "Beaches", hero: "TAMARINDO1.png" },
+  { slug: "city-urban", title: "City Urban", folder: "City_Urban", hero: "amon1.jpg" },
+  { slug: "homes-hotels", title: "Homes & Hotels", folder: "location_homes_hotels", hero: "NAYARA1.png" },
+  { slug: "rivers-waterfalls", title: "Rivers & Waterfalls", folder: "rivers_waterfalls", hero: "rio celeste.jpeg" },
+  { slug: "rural-countryside", title: "Rural Countryside", folder: "rural_country", hero: "arenal.png" },
+];
+
+const workImages = folderImages("our_work");
+const workHero = workImages.includes("HELLO FASHION.jpg") ? "HELLO FASHION.jpg" : workImages[0];
 
 const plan = [
   {
     id: "homePage",
     label: "Home page",
     single: {
-      aboutImage: img("assets/HomePage/GPH-Tree.png", "Costa Rica landscape illustration"),
+      aboutImage: img("assets/costa_rica_tree.png", "Costa Rica landscape illustration"),
     },
-    arrays: {
-      heroSlides: {
-        field: "image",
-        items: [
-          gal("assets/HomePage/home page main hero image.png", "Fashion shoot in Costa Rica"),
-          gal("assets/HomePage/Homepage loop1.png", "Editorial production in Costa Rica"),
-          gal("assets/HomePage/homepage loop image 2.png", "Beach fashion production"),
-          gal("assets/HomePage/homepage loop image 3.png", "Commercial shoot in Costa Rica"),
-          gal("assets/HomePage/homepage  Loop image 4.png", "Swimwear campaign on the coast"),
-        ],
-      },
+  },
+  {
+    id: "aboutPage",
+    label: "About",
+    single: {
+      heroImage: img("team/team-hero.png", "Costa Rica Production Company founders in Costa Rica"),
+    },
+  },
+  {
+    id: "contactPage",
+    label: "Contact",
+    single: {
+      heroImage: img("assets/HomePage/Homepage loop1.png", "Costa Rica location"),
     },
   },
   {
@@ -96,158 +147,50 @@ const plan = [
     },
   },
   {
+    id: "ourWorkPage",
+    label: "Our work",
+    single: {
+      heroImage: img(`assets/our_work/${workHero}`, "Selected production work"),
+    },
+    arrays: {
+      gallery: {
+        field: "image",
+        items: workImages.map((name) => gal(`assets/our_work/${name}`, altFromName(name))),
+      },
+    },
+  },
+  {
     id: "locationsIndexPage",
     label: "Locations index",
     single: {
-      heroImage: img("location/Locations-01.png", "Costa Rica landscape for location shoots"),
+      heroImage: img("assets/Beaches/MANUEL ANTONIO1.png", "Costa Rica landscape for location shoots"),
     },
   },
+  ...locations.map(locationEntry),
   {
-    id: "location-lorem-valley",
-    label: "Location — Lorem Valley",
-    single: {
-      heroImage: img(
-        "location/lorem-valley/Moorish-Architecture-01.jpeg",
-        "Lorem Valley placeholder"
-      ),
-      sideImage: img(
-        "location/lorem-valley/Moorish-Architecture-02.jpg",
-        "Lorem Valley placeholder"
-      ),
-    },
-    arrays: {
-      gallery: {
-        field: "image",
-        items: [
-          gal("location/lorem-valley/Moorish-Architecture-03.jpg", "Lorem Valley placeholder 1"),
-          gal("location/lorem-valley/Moorish-Architecture-04.jpg", "Lorem Valley placeholder 2"),
-          gal("location/lorem-valley/Moorish-Architecture-05.jpg", "Lorem Valley placeholder 3"),
-          gal("location/lorem-valley/Moorish-Architecture-06.jpg", "Lorem Valley placeholder 4"),
-          gal("location/lorem-valley/Moorish-Architecture-07.jpg", "Lorem Valley placeholder 5"),
-          gal("location/lorem-valley/Moorish-Architecture-08.jpeg", "Lorem Valley placeholder"),
-          gal("location/lorem-valley/Moorish-Architecture-09.jpeg", "Lorem Valley placeholder"),
-          gal("location/lorem-valley/Moorish-Architecture-10.jpeg", "Ipsum Coast placeholder"),
-          gal("location/lorem-valley/Moorish-Architecture-11.jpeg", "Placeholder location"),
-          gal("location/lorem-valley/Moorish-Architecture-12.jpeg", "Lorem Valley placeholder 10"),
-          gal("location/lorem-valley/Moorish-Architecture-13.png", "Lorem Valley placeholder 11"),
-        ],
-      },
-    },
+    id: "team-myra",
+    label: "Team — Myra Gonzalez",
+    single: { photo: img("team/MYRA-BIOIMAGE.png", "Myra Gonzalez") },
   },
   {
-    id: "location-ipsum-coast",
-    label: "Location — Ipsum Coast",
-    single: {
-      heroImage: img(
-        "location/ipsum-coast/Historic-and-Traditional-01.jpeg",
-        "Ipsum Coast placeholder"
-      ),
-      sideImage: img(
-        "location/ipsum-coast/Historic-and-Traditional-02.jpeg",
-        "Ipsum Coast placeholder"
-      ),
-    },
-    arrays: {
-      gallery: {
-        field: "image",
-        items: [
-          gal("location/ipsum-coast/Historic-and-Traditional-02.jpeg", "Ipsum Coast placeholder"),
-          gal("location/ipsum-coast/Historic-and-Traditional-03.jpeg", "Ipsum Coast placeholder 2"),
-          gal("location/ipsum-coast/Historic-and-Traditional-04.jpeg", "Ipsum Coast placeholder 3"),
-          gal("location/ipsum-coast/Historic-and-Traditional-05.jpeg", "Ipsum Coast placeholder 4"),
-          gal("location/ipsum-coast/Historic-and-Traditional-06.jpeg", "Ipsum Coast placeholder 5"),
-          gal("location/ipsum-coast/Historic-and-Traditional-07.jpeg", "Placeholder location"),
-          gal("location/ipsum-coast/Historic-and-Traditional-08.jpeg", "Ipsum Coast placeholder 7"),
-          gal("location/ipsum-coast/Historic-and-Traditional-09.jpeg", "Ipsum Coast placeholder 8"),
-          gal("location/ipsum-coast/Historic-and-Traditional-10.jpeg", "Historic courtyard"),
-          gal("location/ipsum-coast/Historic-and-Traditional-11.jpeg", "Ipsum Coast placeholder 10"),
-          gal("location/ipsum-coast/Historic-and-Traditional-12.jpeg", "Ipsum Coast placeholder 11"),
-          gal("location/ipsum-coast/Historic-and-Traditional-13.jpeg", "San Miguel Alto vista"),
-          gal("location/ipsum-coast/Historic-and-Traditional-14.jpeg", "Sacromonte caves"),
-        ],
-      },
-    },
+    id: "team-didra",
+    label: "Team — Didra Gonzalez",
+    single: { photo: img("team/Didra.png", "Didra Gonzalez") },
   },
   {
-    id: "location-dolor-highlands",
-    label: "Location — Dolor Highlands",
-    single: {
-      heroImage: img(
-        "location/dolor-highlands/mediterranean-coastlines-01.png",
-        "Mediterranean coastline shoot location"
-      ),
-      sideImage: img(
-        "location/dolor-highlands/mediterranean-coastlines-02.jpeg",
-        "Costa Tropical coastline"
-      ),
-    },
-    arrays: {
-      gallery: {
-        field: "image",
-        items: [
-          gal("location/dolor-highlands/mediterranean-coastlines-03.jpg", "Costa Tropical shoreline"),
-          gal("location/dolor-highlands/mediterranean-coastlines-04.jpg", "Mediterranean coast view"),
-          gal("location/dolor-highlands/mediterranean-coastlines-02.jpeg", "Costa Tropical coastline"),
-          gal("location/dolor-highlands/mediterranean-coastlines-05.jpeg", "Mediterranean coastal cliffs"),
-          gal("location/dolor-highlands/mediterranean-coastlines-06.png", "Costa Tropical beach"),
-          gal("location/dolor-highlands/mediterranean-coastlines-07.jpeg", "Mediterranean sea view"),
-          gal("location/dolor-highlands/mediterranean-coastlines-08.jpeg", "Coastal landscape"),
-          gal("location/dolor-highlands/mediterranean-coastlines-09.jpeg", "Mediterranean coastline"),
-          gal("location/dolor-highlands/mediterranean-coastlines-10.jpeg", "Coastal vista"),
-          gal("location/dolor-highlands/mediterranean-coastlines-11.jpeg", "Mediterranean shore"),
-          gal("location/dolor-highlands/mediterranean-coastlines-12.png", "Coastal fashion location"),
-          gal("location/dolor-highlands/mediterranean-coastlines-13.png", "Mediterranean location shoot"),
-        ],
-      },
-    },
+    id: "team-bella",
+    label: "Team — Bella Lawrence Mills",
+    single: { photo: img("team/Bella.png", "Bella Lawrence Mills") },
   },
   {
-    id: "location-amet-city",
-    label: "Location — Amet City",
-    single: {
-      heroImage: img(
-        "location/amet-city/Granada-City-Center-01.jpeg",
-        "Amet City placeholder"
-      ),
-      sideImage: img(
-        "location/amet-city/Granada-City-Center-02.jpg",
-        "Urban architectural setting"
-      ),
-    },
-    arrays: {
-      gallery: {
-        field: "image",
-        items: [
-          gal("location/amet-city/Granada-City-Center-02.jpg", "City location 1"),
-          gal("location/amet-city/Granada-City-Center-03.jpg", "City location 2"),
-          gal("location/amet-city/Granada-City-Center-04.jpeg", "City location 3"),
-          gal("location/amet-city/Granada-City-Center-05.jpeg", "City location 4"),
-          gal("location/amet-city/Granada-City-Center-06.jpeg", "City location 5"),
-        ],
-      },
-    },
+    id: "team-jarl",
+    label: "Team — Jarl Allard",
+    single: { photo: img("team/Jarl.png", "Jarl Allard") },
   },
   {
-    id: "location-consectetur-rainforest",
-    label: "Location — Consectetur Rainforest",
-    single: {
-      heroImage: img("location/consectetur-rainforest/Alpine-and-Vistas-01.jpg", "Consectetur Rainforest placeholder"),
-      sideImage: img("location/consectetur-rainforest/Alpine-and-Vistas-02.jpg", "Alpine location"),
-    },
-    arrays: {
-      gallery: {
-        field: "image",
-        items: [
-          gal("location/consectetur-rainforest/Alpine-and-Vistas-02.jpg", "Alpine location 1"),
-          gal("location/consectetur-rainforest/Alpine-and-Vistas-03.jpg", "Alpine location 2"),
-          gal("location/consectetur-rainforest/Alpine-and-Vistas-04.jpeg", "San Miguel Alto view"),
-          gal("location/consectetur-rainforest/Alpine-and-Vistas-05.png", "Mirador San Miguel"),
-          gal("location/consectetur-rainforest/Alpine-and-Vistas-06.jpeg", "Mirador Placeta de Carvajales"),
-          gal("location/consectetur-rainforest/Alpine-and-Vistas-07.jpeg", "Mirador de San Nicolás"),
-          gal("location/consectetur-rainforest/Alpine-and-Vistas-08.jpeg", "Sacromonte hillside vista"),
-        ],
-      },
-    },
+    id: "team-kenny",
+    label: "Team — Kenneth Martiatu",
+    single: { photo: img("team/Kenny.png", "Kenneth Martiatu") },
   },
 ];
 

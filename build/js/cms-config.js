@@ -1,5 +1,5 @@
 window.GPH_CMS = {
-  projectId: "your-project-id",
+  projectId: "8no1l6kq",
   dataset: "production",
   apiVersion: "2024-01-01",
 };

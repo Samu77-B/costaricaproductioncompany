@@ -323,11 +323,12 @@ export const location = defineType({
       description: "Must match the location dropdown value (usually same as slug).",
       options: {
         list: [
-          { title: "Lorem Valley", value: "lorem-valley" },
-          { title: "Ipsum Coast", value: "ipsum-coast" },
-          { title: "Dolor Highlands", value: "dolor-highlands" },
-          { title: "Amet City", value: "amet-city" },
-          { title: "Consectetur Rainforest", value: "consectetur-rainforest" },
+          { title: "Abandoned", value: "abandoned" },
+          { title: "Beaches", value: "beaches" },
+          { title: "City Urban", value: "city-urban" },
+          { title: "Homes & Hotels", value: "homes-hotels" },
+          { title: "Rivers & Waterfalls", value: "rivers-waterfalls" },
+          { title: "Rural Countryside", value: "rural-countryside" },
         ],
       },
     }),

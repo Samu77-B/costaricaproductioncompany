@@ -2,7 +2,7 @@
 
 The public site stays **static HTML** on Hostinger. Editors change text and images in **Sanity Studio** (a separate website). After they click **Publish**, the live pages fetch the new content. No FTP for the client.
 
-Until a Sanity project ID is added, the site keeps showing the current hard-coded HTML.
+The live site reads project `8no1l6kq`. If that ID is ever removed from `build/js/cms-config.js`, pages fall back to the hard-coded HTML.
 
 ## What the client can change
 
@@ -89,7 +89,7 @@ Open `http://localhost:3333`, log in, upload images, click **Publish**.
 npm run studio:deploy
 ```
 
-Hostname is set to `costaricaproductioncompany` (update after the new Sanity project is created). The editor URL will be:
+Hostname is already set to `costaricaproductioncompany`, so the editor URL is:
 
 `https://costaricaproductioncompany.sanity.studio`
 

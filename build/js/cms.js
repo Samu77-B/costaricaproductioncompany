@@ -312,13 +312,17 @@
       if (content) {
         const headline = content.querySelector(".about__headline");
         const blocksHtml = doc.aboutBlocks
-          .map(
-            (block, index) => `
-              <div class="about__block"${index === 0 ? ' id="services"' : ""}>
-                <h2 class="about__subhead">${escapeHtml(block.subhead || "")}</h2>
+          .map((block) => {
+            const isLandscape = /landscape/i.test(block.subhead || "");
+            const subhead = hasText(block.subhead)
+              ? `<h2 class="about__subhead">${escapeHtml(block.subhead)}</h2>`
+              : "";
+            return `
+              <div class="about__block"${isLandscape ? ' id="services"' : ""}>
+                ${subhead}
                 <p class="about__text">${escapeHtml(block.body || "")}</p>
-              </div>`
-          )
+              </div>`;
+          })
           .join("");
         content.innerHTML = (headline ? headline.outerHTML : "") + blocksHtml;
       }
