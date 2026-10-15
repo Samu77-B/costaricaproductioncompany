@@ -287,12 +287,12 @@ const workHtml = `<!DOCTYPE html>
   <meta property="og:url" content="https://www.costaricaproductioncompany.com/our-work/">
   <meta property="og:image" content="https://www.costaricaproductioncompany.com${workHeroSrc}">
   <link rel="icon" href="/assets/costa-rica-logo-mbl.png?v=3" type="image/png">
-  <link rel="stylesheet" href="/css/styles.css?v=45">
+  <link rel="stylesheet" href="/css/styles.css?v=50">
 </head>
 <body data-base="/" data-page="our-work">
   <div id="site-header"></div>
 
-  <section class="page-hero">
+  <section class="page-hero page-hero--our-work">
     <div class="page-hero__media">
       <img src="${workHeroSrc}" alt="Selected production work">
     </div>
